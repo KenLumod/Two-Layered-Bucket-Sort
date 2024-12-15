@@ -69,6 +69,8 @@ This program implements the **Two-Layered Bucket Sort Algorithm**, a sorting tec
 For more details, refer to the comprehensive documentation:
 [Two-Layered Bucket Sort Research Paper](https://drive.google.com/file/d/1LEwcoT8S8B7nJv8CY5ehj-n3OKTCDjE4/view?usp=sharing)
 
+**Note**: While this paper outlines the details of the algorithm, it cannot be formally referenced in academic journals as it was not accepted by the chosen journal due to scope mismatches and has not yet been resubmitted to another journal.
+
 ---
 
 ## License
