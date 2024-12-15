@@ -1,35 +1,77 @@
-# Two-Layered-Bucket-Sort
+# Two-Layered Bucket Sort Algorithm
 
-Two-Layered Bucket Sort is an enhanced version of the traditional bucket sort, designed to improve performance, particularly on large data sets. This approach leverages a two-layered structure of buckets to handle data more efficiently, demonstrating superior performance compared to traditional sorting algorithms like merge sort for large-scale data.
-The primary goal of this algorithm is to address the limitations of traditional bucket sort by introducing an additional layer of sub-buckets within each primary bucket. This refinement aims to reduce sorting overhead within each bucket, ensuring better distribution and faster sorting.
+This program implements the **Two-Layered Bucket Sort Algorithm**, a sorting technique created by **Kenneth Lumod** and **Pamela Floriel Dubria** to improve performance by addressing uneven data distribution in traditional bucket sort. The program is written in **C++** and features a secondary layer of sub-buckets for enhanced efficiency.
 
-How It Works
+---
 
-Primary Bucketing:
+## Overview
 
-The data is first divided into two primary buckets based on a threshold value (e.g., 50 in this implementation). Numbers below or equal to the threshold go into the lower bucket, while the rest go into the upper bucket.
-Sub-Bucketing:
+### Key Features:
+1. **Two-Layered Bucket System**:
+   - Divides data into **Primary Buckets** (Lower and Upper buckets).
+   - Further subdivides these into **Sub-Buckets** based on data size.
 
-Each primary bucket is further divided into sub-buckets based on the data's range within that bucket. The number of sub-buckets is determined by the square root of the bucket size, ensuring that the data is distributed more evenly across smaller, manageable segments.
-Sorting Within Sub-Buckets:
+2. **Improved Sorting Efficiency**:
+   - Uses **Insertion Sort** within sub-buckets for localized sorting.
+   - Handles unbalanced datasets effectively, making it more efficient for large-scale data sorting.
 
-Sub-buckets are sorted individually using insertion sort, a simple and efficient sorting algorithm for small data sets. This choice ensures minimal overhead and leverages the natural advantages of insertion sort for nearly sorted or localized data.
-Merging:
+3. **Customizability**:
+   - Provides flexibility to use other sorting algorithms like Quick Sort or Merge Sort within sub-buckets.
 
-After sorting, all sub-buckets within a primary bucket are merged back. Finally, the sorted lower bucket is concatenated with the sorted upper bucket to produce the fully sorted data.
-Technologies Used
+---
 
-Programming Language: C++
-Random Data Generation: Utilized the C++ Standard Library's random_device, mt19937, and uniform_int_distribution to create a large dataset of random numbers.
-Sorting Mechanism: Combines the bucket sort paradigm with insertion sort for efficient internal sorting.
-Mathematical Operations: Uses range calculations and square roots to optimize sub-bucket allocation.
-Advantages Over Traditional Sorting Algorithms
+## Features
 
-Improved Performance on Large Data Sets: The two-layered structure reduces the inefficiencies of single-layer bucket sort by better handling data distributions.
-Efficiency: Insertion sort's localized efficiency complements the bucket sort's divide-and-conquer approach, leading to faster sorting times for sub-divided segments.
-Scalability: By intelligently allocating sub-buckets, the algorithm can handle a wide range of input sizes effectively.
-Performance
-In experimental studies, the Two-Layered Bucket Sort has shown promising results, outperforming traditional merge sort in large datasets due to its optimized handling of data partitions and reduced sorting overhead within each bucket.
+### Algorithm Workflow:
+1. **Primary Bucketing**:
+   - Data is divided into two main buckets: Lower and Upper.
+2. **Sub-Bucketing**:
+   - Each primary bucket is further divided into sub-buckets.
+   - The number of sub-buckets is determined by the square root of the primary bucket's size.
+3. **Sorting Sub-Buckets**:
+   - Each sub-bucket is sorted using **Insertion Sort**.
+4. **Combining Results**:
+   - Sub-buckets are concatenated to form sorted primary buckets, which are then merged into the final sorted array.
 
-Paper:
-https://drive.google.com/file/d/1LEwcoT8S8B7nJv8CY5ehj-n3OKTCDjE4/view?usp=sharing
+---
+
+## How to Run
+
+1. **Requirements**:
+   - C++ compiler (e.g., g++, clang++)
+   - A development environment or command-line interface.
+
+2. **Compilation**:
+   ```bash
+   g++ -o bucket_sort two_layer_bucket_sort.cpp
+   ```
+
+3. **Execution**:
+   ```bash
+   ./bucket_sort
+   ```
+
+4. **Output**:
+   - The program will generate random data, sort it using the Two-Layered Bucket Sort Algorithm, and display the sorted results.
+
+---
+
+## Advantages
+
+- **Handles Unbalanced Data**: Overcomes the inefficiencies of traditional bucket sort by redistributing data more effectively.
+- **Scalable**: Performs well on large datasets with uneven distributions.
+- **Customizable**: Offers flexibility in choosing the secondary sorting algorithm for sub-buckets.
+
+---
+
+## Documentation
+
+For more details, refer to the comprehensive documentation:
+[Two-Layered Bucket Sort Research Paper](https://drive.google.com/file/d/1LEwcoT8S8B7nJv8CY5ehj-n3OKTCDjE4/view?usp=sharing)
+
+---
+
+## License
+
+This program is open-source and distributed under the MIT License. Feel free to use and modify it for educational or research purposes.
+
