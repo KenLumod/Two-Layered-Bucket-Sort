@@ -30,3 +30,6 @@ Efficiency: Insertion sort's localized efficiency complements the bucket sort's 
 Scalability: By intelligently allocating sub-buckets, the algorithm can handle a wide range of input sizes effectively.
 Performance
 In experimental studies, the Two-Layered Bucket Sort has shown promising results, outperforming traditional merge sort in large datasets due to its optimized handling of data partitions and reduced sorting overhead within each bucket.
+
+Paper:
+https://drive.google.com/file/d/1LEwcoT8S8B7nJv8CY5ehj-n3OKTCDjE4/view?usp=sharing
